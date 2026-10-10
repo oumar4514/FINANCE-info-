@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d18">
+  <meta name="description" content="FINANCE-info : votre bibliothèque de connaissances financières, trading, Forex, or et investissement.">
+  <title>FINANCE-info 🗞️ | Le savoir financier</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Accueil FINANCE-info">
+        <span class="brand-icon">F<span>i</span></span>
+        <span>
+          <strong>FINANCE-info<span class="gold">🗞️</span></strong>
+          <small>LE SAVOIR FINANCIER</small>
+        </span>
+      </a>
+
+      <button class="new-chat" id="newChat">
+        <span>＋</span> Nouvelle conversation
+      </button>
+
+      <p class="side-label">EXPLORER</p>
+      <nav id="categoryNav" class="category-nav">
+        <button class="category active" data-category="Toutes">
+          <span>◈</span> Toutes les catégories
+        </button>
+        <button class="category" data-category="Forex">
+          <span>↗</span> Forex & devises
+        </button>
+        <button class="category" data-category="Or & XAUUSD">
+          <span>◆</span> Or & XAUUSD
+        </button>
+        <button class="category" data-category="Analyse technique">
+          <span>⌁</span> Analyse technique
+        </button>
+        <button class="category" data-category="Gestion du risque">
+          <span>◇</span> Gestion du risque
+        </button>
+        <button class="category" data-category="Psychologie">
+          <span>◎</span> Psychologie
+        </button>
+        <button class="category" data-category="Fondamentaux">
+          <span>◷</span> Fondamentaux
+        </button>
+        <button class="category" data-category="Investissement">
+          <span>▤</span> Investissement
+        </button>
+        <button class="category" data-category="Crypto">
+          <span>₿</span> Cryptomonnaies
+        </button>
+        <button class="category" data-category="Finance d'entreprise">
+          <span>▦</span> Finance d'entreprise
+        </button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="status"><span></span> Base locale active</div>
+        <p>Une question financière ? Nous sommes là pour apprendre.</p>
+        <small>FINANCE-info · Version 1.0</small>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button id="menuToggle" class="mobile-menu" aria-label="Ouvrir le menu">☰</button>
+        <div class="breadcrumb">Accueil <span>/</span> <b id="currentCategory">Toutes les catégories</b></div>
+        <div class="top-status"><span></span> MODE ÉDUCATIF</div>
+      </header>
+
+      <section class="welcome" id="welcome">
+        <div class="eyebrow"><span></span> VOTRE ESPACE FINANCIER</div>
+        <h1>La finance, <span>sans détour.</span></h1>
+        <p>Explorez les marchés, comprenez les mécanismes financiers et développez vos connaissances, une question à la fois.</p>
+
+        <div class="search-wrap">
+          <span class="search-icon">⌕</span>
+          <input id="mainSearch" type="text" placeholder="Ex. Comment fonctionne le XAUUSD ?" autocomplete="off">
+          <button id="searchButton">Explorer <span>→</span></button>
+        </div>
+        <div class="search-hint">Recherchez dans notre bibliothèque de réponses prédéfinies.</div>
+
+        <div class="section-heading">
+          <div><span class="mini-line"></span> POUR COMMENCER</div>
+          <span>QUESTIONS SUGGÉRÉES</span>
+        </div>
+
+        <div class="suggestions">
+          <button class="suggestion" data-question="Qu'est-ce que le Forex ?">
+            <span class="suggestion-icon">↗</span>
+            <span><b>Comprendre le Forex</b><small>Devises et paires de devises</small></span>
+            <span class="suggestion-arrow">↗</span>
+          </button>
+          <button class="suggestion" data-question="Comment fonctionne le XAUUSD ?">
+            <span class="suggestion-icon">◆</span>
+            <span><b>Découvrir l'or</b><small>Comprendre le XAUUSD</small></span>
+            <span class="suggestion-arrow">↗</span>
+          </button>
+          <button class="suggestion" data-question="Comment calculer le risque d'un trade ?">
+            <span class="suggestion-icon">◇</span>
+            <span><b>Gérer son risque</b><small>Protéger son capital</small></span>
+            <span class="suggestion-arrow">↗</span>
+          </button>
+          <button class="suggestion" data-question="Qu'est-ce que l'analyse technique ?">
+            <span class="suggestion-icon">⌁</span>
+            <span><b>Lire les graphiques</b><small>Analyse technique</small></span>
+            <span class="suggestion-arrow">↗</span>
+          </button>
+        </div>
+
+        <div class="stats-strip">
+          <div><b id="answerCount">0</b><span>RÉPONSES DISPONIBLES</span></div>
+          <div><b>100 %</b><span>ORIENTÉ FINANCE</span></div>
+          <div><b>24/7</b><span>ACCÈS AU SITE</span></div>
+        </div>
+      </section>
+
+      <section class="chat-section" id="chatSection" hidden>
+        <div class="chat-heading">
+          <div>
+            <span class="eyebrow"><span></span> BIBLIOTHÈQUE FINANCIÈRE</span>
+            <h2>Votre conversation</h2>
+          </div>
+          <button id="backHome" class="text-button">← Accueil</button>
+        </div>
+        <div id="messages" class="messages" aria-live="polite"></div>
+        <form id="chatForm" class="chat-composer">
+          <input id="chatInput" type="text" placeholder="Posez une question financière..." autocomplete="off" required>
+          <button type="submit" aria-label="Envoyer la question">➤</button>
+        </form>
+        <p class="composer-note">Réponses prédéfinies · Aucun conseil financier personnalisé</p>
+      </section>
+
+      <footer class="footer">
+        <div><b>FINANCE-info<span class="gold">🗞️</span></b><span>Comprendre avant d'investir.</span></div>
+        <p>Contenu éducatif. Le trading et les investissements comportent des risques de perte.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
